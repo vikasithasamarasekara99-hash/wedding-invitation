@@ -52,31 +52,43 @@ footer{text-align:center;padding:32px 10px 45px;color:#c9bda9;font-style:italic;
 @media(max-width:440px){.music-toggle{right:10px;bottom:12px;padding:10px 13px;font-size:13px}}
 
 
-/* Elegant invitation-opening screen: the visitor's tap can start audio on mobile browsers. */
-.opening-screen{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:24px;background:radial-gradient(ellipse at center,rgba(44,37,34,.78),rgba(4,4,5,.98)),#080809;transition:opacity .9s ease,visibility .9s ease}
+/* Cinematic luxury opening: black-glass invitation, silver-gold foil, floral corners and a graceful reveal. */
+.opening-screen{position:fixed;inset:0;z-index:100;display:grid;place-items:center;padding:22px;overflow:hidden;background:radial-gradient(ellipse at 50% 38%,rgba(72,60,48,.48),transparent 43%),radial-gradient(ellipse at 50% 100%,rgba(108,84,54,.16),transparent 48%),linear-gradient(145deg,#111014 0%,#030304 56%,#17120f 100%);transition:opacity 1s ease,visibility 1s ease}
+.opening-screen:before{content:"";position:absolute;inset:16px;border:1px solid #d8c29b36;pointer-events:none}
+.opening-screen:after{content:"";position:absolute;inset:-30%;pointer-events:none;background:linear-gradient(112deg,transparent 38%,#fff0 44%,#fff2 48%,#d8c29b22 50%,transparent 56%);transform:translateX(-65%) rotate(8deg);animation:openingSweep 7s ease-in-out infinite}
 .opening-screen.closed{opacity:0;visibility:hidden;pointer-events:none}
-.opening-card{position:relative;width:min(430px,100%);min-height:570px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:42px 28px;border:1px solid #d8c29b99;background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.025));box-shadow:0 20px 80px #000b,inset 0 0 45px #fff1;backdrop-filter:blur(18px);color:#f4ead9}
-.opening-card:before,.opening-card:after{content:'✧';position:absolute;color:#d8c29b;font-size:24px}.opening-card:before{top:18px;left:20px}.opening-card:after{bottom:18px;right:20px}
-.opening-florals{font-size:29px;letter-spacing:.25em;color:#e4d2b2;margin-bottom:25px;text-shadow:0 0 20px #fff4}
-.opening-eyebrow{font-size:10px;letter-spacing:.28em;text-transform:uppercase;color:#c9b797;margin-bottom:24px}
-.opening-names{font-family:'Great Vibes',cursive;font-size:clamp(46px,12vw,66px);line-height:1.1;color:#fff7e9;text-shadow:0 3px 24px #fff2}
-.opening-amp{font-family:'Cormorant Garamond',serif;font-size:24px;color:#d8c29b;margin:8px 0}
-.opening-date{font-family:'Cormorant Garamond',serif;font-size:14px;letter-spacing:.22em;margin-top:28px;color:#e8dcc8}
-.open-button{margin-top:35px;padding:14px 25px;border:1px solid #d8c29b;background:rgba(10,9,9,.55);color:#f8edda;letter-spacing:.16em;text-transform:uppercase;font:12px 'Cormorant Garamond','Noto Serif Sinhala',serif;cursor:pointer;transition:background .25s,transform .25s}
-.open-button:hover{background:#5a4934;transform:translateY(-2px)}
-.opening-note{margin-top:14px;font-size:11px;letter-spacing:.06em;color:#b9aa95}
-@media(max-height:700px){.opening-card{min-height:0;padding:28px 22px}.opening-florals{margin-bottom:14px}.open-button{margin-top:22px}}
+.opening-card{position:relative;isolation:isolate;width:min(430px,100%);min-height:590px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:48px 28px;border:1px solid #e9d6aeaa;background:linear-gradient(135deg,rgba(255,255,255,.13),rgba(255,255,255,.025) 30%,rgba(255,255,255,.065) 54%,rgba(255,255,255,.015)),rgba(12,10,12,.76);box-shadow:0 26px 100px #000e,inset 0 0 0 5px #fff03,inset 0 0 55px #fff1,0 0 38px #d8c29b12;backdrop-filter:blur(22px);-webkit-backdrop-filter:blur(22px);color:#f4ead9;animation:cardFloat 6s ease-in-out infinite}
+.opening-card:before{content:"";position:absolute;inset:9px;border:1px solid #d8c29b42;pointer-events:none;z-index:-1}
+.opening-card:after{content:"";position:absolute;inset:0;pointer-events:none;background:linear-gradient(115deg,transparent 18%,#fff0 29%,#fff2 34%,transparent 40%,transparent 66%,#fff1 72%,transparent 78%);opacity:.6}
+.opening-corner{position:absolute;color:#e7d3ac;font-size:25px;text-shadow:0 0 18px #d8c29b55;line-height:1}.opening-corner.tl{top:18px;left:20px}.opening-corner.tr{top:18px;right:20px;transform:scaleX(-1)}.opening-corner.bl{bottom:18px;left:20px;transform:scaleY(-1)}.opening-corner.br{bottom:18px;right:20px;transform:scale(-1)}
+.opening-florals{font-size:31px;letter-spacing:.25em;color:#eee2cc;margin-bottom:23px;text-shadow:0 0 24px #fff5;filter:drop-shadow(0 4px 12px #d8c29b22);animation:floralGlow 4s ease-in-out infinite}
+.opening-eyebrow{font-size:10px;letter-spacing:.30em;text-transform:uppercase;color:#d8c29b;margin-bottom:22px}
+.opening-names{font-family:'Great Vibes',cursive;font-size:clamp(49px,12vw,70px);line-height:1.08;color:#fff9ef;text-shadow:0 3px 28px #fff3}
+.opening-amp{font-family:'Cormorant Garamond',serif;font-size:25px;color:#d8c29b;margin:7px 0}
+.opening-date{font-family:'Cormorant Garamond',serif;font-size:13px;letter-spacing:.24em;margin-top:26px;color:#f0e5d2}
+.opening-rule{display:flex;align-items:center;gap:10px;width:70%;margin:20px auto 0;color:#d8c29b;font-size:12px}.opening-rule:before,.opening-rule:after{content:"";height:1px;flex:1;background:linear-gradient(90deg,transparent,#d8c29b)}.opening-rule:after{transform:scaleX(-1)}
+.open-button{position:relative;overflow:hidden;margin-top:29px;padding:15px 27px;border:1px solid #d8c29b;background:linear-gradient(120deg,#e6d4b1 0%,#b39a72 45%,#e7d6b6 100%);color:#17120e;letter-spacing:.13em;text-transform:uppercase;font:600 12px 'Cormorant Garamond','Noto Serif Sinhala',serif;cursor:pointer;box-shadow:0 8px 24px #0008,inset 0 1px #fff9;transition:transform .3s,box-shadow .3s}
+.open-button:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 25%,#fff9 50%,transparent 75%);transform:translateX(-120%);transition:transform .7s}.open-button:hover:before{transform:translateX(120%)}.open-button:hover{transform:translateY(-2px);box-shadow:0 12px 30px #000a,0 0 22px #d8c29b28}
+.opening-note{margin-top:14px;font-size:11px;letter-spacing:.06em;color:#c5b69f}
+.opening-screen.leaving .opening-card{animation:cardReveal .95s cubic-bezier(.2,.75,.2,1) forwards}.opening-screen.leaving:after{animation:lightFlash .9s ease-out forwards}
+@keyframes openingSweep{0%,35%{transform:translateX(-70%) rotate(8deg);opacity:0}50%{opacity:.8}75%,100%{transform:translateX(70%) rotate(8deg);opacity:0}}
+@keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}@keyframes floralGlow{0%,100%{opacity:.82}50%{opacity:1;filter:drop-shadow(0 0 12px #fff5)}}
+@keyframes cardReveal{0%{transform:scale(1) rotateX(0);opacity:1;filter:brightness(1)}45%{transform:scale(1.035) rotateX(-2deg);opacity:1;filter:brightness(1.35)}100%{transform:scale(1.13) translateY(-18px);opacity:0;filter:brightness(1.7)}}@keyframes lightFlash{0%{opacity:0}45%{opacity:1;background:radial-gradient(ellipse at center,#fff3,#d8c29b20 30%,transparent 70%)}100%{opacity:0}}
+@media(max-height:700px){.opening-card{min-height:0;padding:30px 22px}.opening-florals{margin-bottom:14px}.open-button{margin-top:22px}}
+@media(prefers-reduced-motion:reduce){.opening-card,.opening-florals,.opening-screen:after{animation:none!important}.opening-screen.leaving .opening-card{animation:none!important}}
 </style>
 </head>
 <body>
 <div class="opening-screen" id="openingScreen" role="dialog" aria-modal="true" aria-label="Wedding invitation">
   <div class="opening-card">
+    <span class="opening-corner tl" aria-hidden="true">❧</span><span class="opening-corner tr" aria-hidden="true">❧</span><span class="opening-corner bl" aria-hidden="true">❧</span><span class="opening-corner br" aria-hidden="true">❧</span>
     <div class="opening-florals" aria-hidden="true">❀ ✧ ❀</div>
     <div class="opening-eyebrow" data-en="You are warmly invited" data-si="ආදරයෙන් ආරාධනා කරමු">You are warmly invited</div>
     <div class="opening-names" data-en="Thisaru" data-si="තිසරු">Thisaru</div>
     <div class="opening-amp">&amp;</div>
     <div class="opening-names" data-en="Sanduni" data-si="සඳුනි">Sanduni</div>
     <div class="opening-date">07 · MAY · 2027 &nbsp; | &nbsp; 10:00 AM</div>
+    <div class="opening-rule" aria-hidden="true">✧</div>
     <button class="open-button" id="openInvitation" type="button" data-en="Open Invitation ✧" data-si="ආරාධනා පත විවෘත කරන්න ✧">Open Invitation ✧</button>
     <div class="opening-note" data-en="Tap to enter · Music & petals await" data-si="ඇතුළු වීමට ඔබන්න · සංගීතය හා මල් පෙති සමඟ">Tap to enter · Music & petals await</div>
   </div>
@@ -159,7 +171,8 @@ const musicLabel=document.getElementById('musicLabel');
 const musicIcon=document.getElementById('musicIcon');
 let musicOn=false;
 async function openWeddingInvitation(){
-  document.getElementById('openingScreen').classList.add('closed');
+  const opening=document.getElementById('openingScreen');
+  opening.classList.add('leaving');
   // The tap on this button is a user gesture, allowing mobile browsers to start audio.
   try{
     await bgMusic.play();
@@ -171,6 +184,7 @@ async function openWeddingInvitation(){
   }catch(err){
     musicLabel.textContent=lang==='si'?'සංගීතය අරඹන්න':'Play Wedding Music';
   }
+  setTimeout(()=>opening.classList.add('closed'),850);
 }
 document.getElementById('openInvitation').addEventListener('click',openWeddingInvitation);
 musicToggle.addEventListener('click',async()=>{
