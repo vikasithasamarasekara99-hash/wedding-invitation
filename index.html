@@ -154,8 +154,8 @@ footer{text-align:center;padding:32px 10px 45px;color:#c9bda9;font-style:italic;
 <label><span data-en="Will you attend?" data-si="ඔබ සහභාගී වෙනවාද?">Will you attend?</span><select id="attendance" name="attendance"><option value="Yes">Yes, I will attend / ඔව්, සහභාගී වෙනවා</option><option value="No">Sorry, I cannot attend / කණගාටුයි, සහභාගී විය නොහැක</option></select></label>
 <label><span data-en="Number of guests" data-si="පැමිණෙන පිරිස">Number of guests</span><select id="guestCount" name="guestCount"><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></label>
 <label><span data-en="Message (optional)" data-si="පණිවිඩය (අත්‍යවශ්‍ය නොවේ)">Message (optional)</span><textarea id="guestMessage" name="guestMessage" rows="3" placeholder="A short message…"></textarea></label>
-<button type="submit" data-en="Send RSVP by Email" data-si="Email මඟින් RSVP යවන්න">Send RSVP by Email</button>
-<p class="form-note" data-en="This opens your email app with the RSVP details filled in. It does not store responses on the website." data-si="මෙය RSVP විස්තර පුරවා ඔබේ email app එක විවෘත කරයි. ප්‍රතිචාර website එකේ ගබඩා නොවේ.">This opens your email app with the RSVP details filled in. It does not store responses on the website.</p>
+<button type="submit" data-en="Send RSVP via WhatsApp" data-si="WhatsApp මඟින් RSVP යවන්න">Send RSVP via WhatsApp</button>
+<p class="form-note" data-en="This opens WhatsApp with your RSVP details ready to send to the couple. Tap Send in WhatsApp to confirm. Responses are not stored on this website." data-si="ඔබගේ RSVP විස්තර සමඟ යුවළගේ WhatsApp chat එක විවෘත වේ. තහවුරු කිරීමට WhatsApp හි Send ඔබන්න. ප්‍රතිචාර මෙම website එකේ ගබඩා නොවේ.">This opens WhatsApp with your RSVP details ready to send to the couple. Tap Send in WhatsApp to confirm. Responses are not stored on this website.</p>
 </form></div></section>
 <section class="content-section"><div class="section-inner"><h2 class="section-title" data-en="Find Us" data-si="අපව හමුවන්න">Find Us</h2><p class="section-sub">BALAGALA TEA GARDEN</p><a class="btn" style="display:inline-block;border:1px solid #d7c5a2;padding:14px 25px;text-decoration:none" href="https://www.google.com/maps/search/?api=1&query=Balagala%20Tea%20Garden" target="_blank" rel="noopener" data-en="Open in Google Maps ↗" data-si="Google Maps විවෘත කරන්න ↗">Open in Google Maps ↗</a></div></section>
 </main>
@@ -209,7 +209,7 @@ musicToggle.addEventListener('click',async()=>{
   }
 });
 
-document.getElementById('rsvpForm').addEventListener('submit',e=>{e.preventDefault();const n=document.getElementById('guestName').value.trim();const a=document.getElementById('attendance').value;const c=document.getElementById('guestCount').value;const m=document.getElementById('guestMessage').value.trim();const subject=encodeURIComponent('Wedding RSVP - '+n);const body=encodeURIComponent('RSVP for Thisaru & Sanduni\nName: '+n+'\nAttendance: '+a+'\nNumber of guests: '+c+'\nMessage: '+m);window.location.href='mailto:?subject='+subject+'&body='+body});
+document.getElementById('rsvpForm').addEventListener('submit',e=>{e.preventDefault();const n=document.getElementById('guestName').value.trim();const a=document.getElementById('attendance').value;const c=document.getElementById('guestCount').value;const m=document.getElementById('guestMessage').value.trim();const body=encodeURIComponent('Wedding RSVP — Thisaru & Sanduni\nName: '+n+'\nAttendance: '+a+'\nNumber of guests: '+c+'\nMessage: '+(m||'—'));window.open('https://wa.me/818041457348?text='+body,'_blank','noopener,noreferrer')});
 </script>
 </body>
 </html>
